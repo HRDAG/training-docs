@@ -1,9 +1,9 @@
 ### Repo handling
 
-*Initial*
-[] `git clone` via SSH
+**Initial**
+[] `git clone` via SSH \
 
-*Maintenance*
+**Maintenance**
 	_Upon returning to repo, before making changes_
 [] `git pull`
 [] `snap pull`
