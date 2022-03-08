@@ -1,7 +1,7 @@
 ### Repo handling
 
 **Initial**
-[] `git clone` via SSH \
+[] `git clone` via SSH
 
 **Maintenance**
 	_Upon returning to repo, before making changes_
