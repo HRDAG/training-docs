@@ -29,13 +29,16 @@ if __name__ == '__main__':
     parser.add_argument("output")
     args = parser.parse_args()
 
-    input = args.input
-    output = args.output
+    input_f = args.input
+    output_f = args.output
 
     # read data, initial verification
     logging.info("Loading data.")
-    raw = pd.read_ext(output)
+    raw = pd.read_ext(input_f)
     check_asserts(raw)
-
+    
+    # save data
+    raw.to_parquet(output_f)
+    
     logging.info("done.")
 # done.
