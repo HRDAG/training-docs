@@ -7,7 +7,7 @@ This repo contains materials to study and learn about principled data processing
 - `language-tips` to consider when writing scripts
 
 ## helpful repos
-There a few repos outside of this one that house various tools and/or guidance that may be useful.
+There are a few repos outside of this one that house various tools and/or guidance that may be useful.
 
 - [sample-repo](https://github.com/baileyb0t/sample_project)
     - This is a dummy repo to test out git functionality like cloning, pushing, and pull requesting
