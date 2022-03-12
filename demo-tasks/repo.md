@@ -76,3 +76,5 @@ Next, we use the terminal to access our workspace (local or remote) and `git clo
 ```
 
 Before we make a new directory for our task, we create a new branch and check into it with `git checkout -b our-branch`. This allows us to work on the existing repo but from `our-branch`, so that we can explore changes separately from the published `main` branch. As we implement our task and its steps, we will continuously make pushes and merge our work to the main branch, but we keep these changes separate upfront to help avoid merge conflicts and disrupting the work of anyone else making changes to the same repo at the same time as us.
+
+# done.

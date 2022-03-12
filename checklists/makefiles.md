@@ -14,3 +14,5 @@
 #### Standard functionality
 - [] `make clean` successfully purges `output` contents
 - [] `make all` successfully rebuilds `output` contents
+
+# done.

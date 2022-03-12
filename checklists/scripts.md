@@ -19,3 +19,5 @@ _Script does NOT contain:_
 - [] Digestible and readily debuggable units of code
     - [] Multiple small scripts instead of a single long script
 - [] Ideal solutions per the corresponding language's guide in the "Tips & Tricks" doc
+
+# done.
