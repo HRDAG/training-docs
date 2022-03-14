@@ -25,8 +25,8 @@ if __name__ == '__main__':
 
     # arg handling
     parser = argparse.ArgumentParser()
-    parser.add_argument("input")
-    parser.add_argument("output")
+    parser.add_argument("--input")
+    parser.add_argument("--output")
     args = parser.parse_args()
 
     input_f = args.input
