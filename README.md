@@ -9,7 +9,7 @@ This repo contains materials to study and learn about principled data processing
 ## helpful repos
 There are a few repos outside of this one that house various tools and/or guidance that may be useful.
 
-- [sample-repo](https://github.com/baileyb0t/sample_project)
+- [sample-project](https://github.com/baileyb0t/sample_project)
     - This is a dummy repo to test out git functionality like cloning, pushing, and pull requesting
 - [resource-utils/faqs](https://github.com/HRDAG/resource-utils/tree/master/faqs)
     - There's a few help articles related to HRDAG workflow, in particular:

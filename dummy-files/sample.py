@@ -25,17 +25,26 @@ if __name__ == '__main__':
 
     # arg handling
     parser = argparse.ArgumentParser()
-    parser.add_argument("input")
-    parser.add_argument("output")
+    parser.add_argument("--input")
+    parser.add_argument("--output")
     args = parser.parse_args()
 
-    input = args.input
-    output = args.output
+    input_f = args.input
+    output_f = args.output
 
     # read data, initial verification
     logging.info("Loading data.")
-    raw = pd.read_ext(output)
-    check_asserts(raw)
-
+    raw_df = pd.read_ext(input_f)
+    check_asserts(raw_df)
+    
+    logging.info('__main__ Summary:')
+    logging.info('====================')    
+    logging.info('{:50}{}'.format('initial shape:', raw_df.shape ))
+    logging.info('{:50}{}'.format('initial info:', raw_df.info() ))
+    logging.info('\n')
+    
+    # save data
+    raw.to_parquet(output_f)
+    
     logging.info("done.")
 # done.

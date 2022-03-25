@@ -25,9 +25,12 @@ output <- args$output
 
 # read data, initial verification
 loginfo("Loading data", logger="")
-dat <- read.ext(output)
+dat <- read.ext(input)
 dat %>%
   verify(nrow(.) > 100) %>%
+
+# save data
+write.parquet(dat, output)
 
 loginfo("done", logger="")
 

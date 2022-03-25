@@ -4,11 +4,11 @@
 # =========================================
 # Project-Name/parent-task/core-task/Makefile
 
-input := ‘input/filename.ext’
-output := ‘output/filename.ext’
+input := input/filename.ext
+output := output/filename.ext
 
-src_py := ‘src/code.py’
-src_R := ‘src/code.R’
+src_py := src/code.py
+src_R := src/code.R
 
 .PHONY: all clean
 
