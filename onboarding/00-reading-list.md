@@ -24,4 +24,12 @@ At HRDAG we tend to use [tidyverse](https://www.tidyverse.org/) tools for data a
 
 [_Practical Vim_](https://pragprog.com/titles/dnvim2/) is one of the best programming books I (PB) have ever read. I think there is a PDF that some of the training team colleagues have. I very strong encourage you to study it closely. 
 
+## Writing
+It's useful to have a reference for the style and caliber of HRDAG's written reporting. Here are a few samples selected by our Executive Director, Megan Price.
+>[This](https://chance.amstat.org/2018/02/statistics-of-genocide/) is technically a magazine article, but it’s a statistics magazine (called _Chance_), so the audience is still assumed to be somewhat technical (or at least technically interested). Another example is [To Predict and Serve?](https://rss.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1740-9713.2016.00960.x) the article Kristian and William wrote for Signficance magazine. Over the years we’ve placed a number of pieces in both [Chance](https://chance.amstat.org/) and [Significance](https://www.significancemagazine.com/) and they’re pretty friendly outlets for our work (full disclosure: I’m currently on the editorial board for Significance). [Violence in Blue](https://granta.com/violence-in-blue/) is a fairly different example of general audience writing (Granta is also friendly to us, and published a couple of our Covid essays, but it’s technically a literary magazine!)
+>
+>[This article](https://hrdag.org/wp-content/uploads/2019/09/2019-DemographicResearch-civilian-killings-el-salvador.pdf) in Demographic Research is one example of peer-reviewed academic writing. Every field has it’s own style, and since we do so much interdisciplinary work, we end up needing to write things up in a variety of styles. This particular blend of political science and demography favors long papers, and this one is 36 pages.
+>
+>In 2019 Patrick wrote a series of memos for different projects that all use a similar MSE approach. I think these are good examples of the kinds of memos or white papers we sometimes write for partners (and also, when possible, publish on our webpage). [The Philippines](https://hrdag.org/wp-content/uploads/2019/07/2019-HRDAG-killings-philippines.pdf) [Indonesia](https://hrdag.org/wp-content/uploads/2018/12/KP-Palemban-ests.pdf) [Sri Lanka](https://hrdag.org/wp-content/uploads/2018/12/HRDAG-ITJPSL-2018-12-12-1.pdf)
+
 <!-- done --> 
