@@ -13,6 +13,12 @@ import pandas as pd
 def check_asserts( val ):
     assert val
 
+def getargs():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input")
+    parser.add_argument("--output")
+    return parser.parse_args()
+
 # main
 if __name__ == '__main__':
 
@@ -24,11 +30,7 @@ if __name__ == '__main__':
                                   logging.StreamHandler()])
 
     # arg handling
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--input")
-    parser.add_argument("--output")
-    args = parser.parse_args()
-
+    args = getargs()
     input_f = args.input
     output_f = args.output
 
@@ -47,4 +49,5 @@ if __name__ == '__main__':
     raw.to_parquet(output_f)
     
     logging.info("done.")
+    
 # done.
