@@ -13,21 +13,25 @@ import pandas as pd
 def check_asserts( val ):
     assert val
 
-def getargs():
+
+def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input")
     parser.add_argument("--output")
     return parser.parse_args()
 
+
+def get_logging(logname):
+        logging.basicConfig(level=logging.DEBUG,
+                            format='%(asctime)s %(levelname)s %(message)s',
+                            handlers=[logging.FileHandler(logname),
+                            logging.StreamHandler()])
+
 # main
 if __name__ == '__main__':
 
     # setup logging
-    logname = "output/core-task.log”
-    logging.basicConfig(level=logging.DEBUG,
-                        format='%(asctime)s %(levelname)s %(message)s',
-                        handlers=[logging.FileHandler(logname),
-                                  logging.StreamHandler()])
+    get_logging("output/core-task.log”)
 
     # arg handling
     args = getargs()
