@@ -12,4 +12,4 @@ There are other directories that might be in a task as well. Here they are:
 
 Tasks generally chain together, so that the output from one task becomes the input of the next. By convention, every branch starts with an `import/` task that converts the file into the correct format for our operations and an `export/` task that converts it to the correct format for whatever the final product is. Importantly, these tasks exist even when the data is already in the correct format. That means that, when you visit the project in six months, you still know where it starts and where it ends.
 
-See [The Task Is A Quantum of Workflow](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/) for a more detail, including an example.
+Read [The Task Is A Quantum of Workflow](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/) and watch [Patrick Ball: Principled Data Processing](https://www.youtube.com/watch?v=ZSunU9GQdcI) for more information on this approach.

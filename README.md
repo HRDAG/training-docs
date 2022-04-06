@@ -29,4 +29,7 @@ There are a few repos outside of this one that house various tools and/or guidan
 - [tool-suite](https://github.com/baileyb0t/tool-suite)
     - A home for some tools related to performance improvements and benchmarking
 
+## other helpful reading topics
+- [Processing scanned documents for investigations of police violence](https://hrdag.org/tech-notes/processing-scanned-docs-for-investigation-police-violence.html)
+
 # done.
