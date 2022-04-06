@@ -28,6 +28,8 @@ There are a few repos outside of this one that house various tools and/or guidan
     - A place for some common tools and code we use to extract info from different kinds of forms
 - [tool-suite](https://github.com/baileyb0t/tool-suite)
     - A home for some tools related to performance improvements and benchmarking
+- [dotfiles](https://github.com/tarakc02/dotfiles)
+    - An example all kinds of dotfiles you might want to explore and use in your working environment, like `vimrc`, `bash_profile`, `zshrc`, and `gitconfig`
 
 ## other helpful reading topics
 - [Processing scanned documents for investigations of police violence](https://hrdag.org/tech-notes/processing-scanned-docs-for-investigation-police-violence.html)
