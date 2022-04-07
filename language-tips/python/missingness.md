@@ -38,7 +38,6 @@ around and a slight delay to the meeting. _Floating point numbers leave more roo
 numeric info than integers do, so the `np.nan` placeholder is read as a float._
 
 
-
 #### [`None`](https://docs.python.org/3/c-api/none.html)
 
 #### upcasting
@@ -68,7 +67,7 @@ Here is a table to summarize some of the upcasting scenarios.
 (I think these are all referring to `data` as a `pd.DataFrame` object, but I need to double check)
 
 I. Arithmetic
-     - 
+     - item
 II. Boolean detection
      - `data.isnull()`
           - returns a series of Booleans for all datapoints referring to whether or not they are missing
