@@ -31,7 +31,34 @@ There are a few repos outside of this one that house various tools and/or guidan
 - [dotfiles](https://github.com/tarakc02/dotfiles)
     - An example all kinds of dotfiles you might want to explore and use in your working environment, like `vimrc`, `bash_profile`, `zshrc`, and `gitconfig`
 
-## other helpful reading topics
+## more helpful topics
+on vim:
+- [Vim Cheat Sheet](https://vim.rtorr.com/)
+- [Vim screencast library](http://vimcasts.org/)
+- [**Interactive:** Vim adventures!](https://vim-adventures.com/)
+
+on git:
+- [Collaboration with version control](https://datasciencebook.ca/Getting-started-with-version-control.html)
+- [Version control for transparency and collaboration](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/02-version-control-1.html)
+- [**Interactive:** Learn Git Branching](https://learngitbranching.js.org/?locale=en_US)
+
+on workflow:
+- [Filenames and data science project organization, Integrated development environments](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/03-filenames-project-organization.html)
+- [Introduction to testing code for data science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html)
+- [Non-interactive scripts and data analysis pipelines](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/07-scripts-and-pipelines.html)
+- [Reproducible reports](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/08-reproducible-reports.html)
+- [Automated testing and continuous integration](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/10-continuous-integration.html)
+
+## other suggested reading
+- [Using Statistics to Assess Lethal Violence in Civil and Inter-State War](https://www.annualreviews.org/doi/pdf/10.1146/annurev-statistics-030718-105222#article-denial) (ask Megan for the PDF if you can't download this one for free!)
 - [Processing scanned documents for investigations of police violence](https://hrdag.org/tech-notes/processing-scanned-docs-for-investigation-police-violence.html)
+
+## books
+- [R for Data Science](https://r4ds.had.co.nz/)
+- [Advanced R](https://adv-r.hadley.nz/)
+- [R markdown: The definitive guide](https://bookdown.org/yihui/rmarkdown/)
+- [Practical Vim](https://bookarchive.net/pdf/practical-vim/)
+- [Data Science: A First Introduction](https://datasciencebook.ca/)
+- [Reproducible and Trustworthy Workflows for Data Science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/README.html)
 
 # done.
