@@ -1,17 +1,23 @@
 ### Python
+Because the Python language is type-agnostic, in order to compile it uses an Interpreter to make inferences about types at runtime. This can result in signficant bottlenecks in performance if we aren't careful about exactly how our code should be implemented.
 
-some samples from [source](https://stackify.com/20-simple-python-performance-tuning-tips/)
+This document shows some samples from:
+- [Python Performance Tuning: 20 Simple Tips](https://stackify.com/20-simple-python-performance-tuning-tips/)
+- [High Performance Pandas: eval() and query()](https://jakevdp.github.io/PythonDataScienceHandbook/03.12-performance-eval-and-query.html)
 
-A few quirky characteristics in the Python language can result in substantial performance drawbacks compared to alternative implementations when scaled up. There are a few things in this family of solutions.
+## *Tips*
+- Purge unused dependencies
+- Use as few global variables as possible
+- [Built-ins](https://docs.python.org/3/library/functions.html)
+    - Don’t write your own version of a built-in method that does exactly the same thing! The built-in version will be faster and include better error handling than a custom implementation.
+- Utilize memory profilers to identify bottlenecks in your code
 
-*Tips*
-[Built-ins](https://docs.python.org/3/library/functions.html)
-^ Don’t write your own version of a built-in method that does exactly the same thing! The built-in version will be faster and include better error handling than a custom implementation.
-Use as few global variables as possible
-Purge unused dependencies
+&nbsp;  
 
-*Tricks*
-Goal: Make a list of integers in a given range
+## *Tricks*
+
+> Goal: Make a list of integers in a given range
+
 Possible solution: 
 ```
 indices = []
@@ -22,7 +28,10 @@ Better solution:
 ```
 indices = [ i for i in range(len(some_list)) ]
 ```
-Goal: Check if an exact match for a value is in a list
+&nbsp;  
+
+> Goal: Check if an exact match for a value is in a list
+
 Possible solution: 
 ```
 target = 5
@@ -42,7 +51,10 @@ target = 5
 if target in some_list:
     (do work)
 ```
-Goal: Find values in one list that are also present in another
+&nbsp;  
+
+> Goal: Find values in one list that are also present in another
+
 Possible solution: 
 ```
 dupes = []
@@ -55,7 +67,10 @@ Better solution:
 ```
 dupes = set(left_list) & set(right_list)
 ```
-Goal: Assign multiple values in one call
+&nbsp;  
+
+> Goal: Assign multiple values in one call
+
 Possible solution: 
 ```
 def format_full_name( some_name ):
@@ -75,7 +90,10 @@ def format_full_name( some_name ):
 
 first, middle, last = format_full_name(“Some Guys Name”)
 ```
-Goal: Swap the contents of two variables
+&nbsp;  
+
+> Goal: Swap the contents of two variables
+
 Possible solution: 
 ```
 temp = x
@@ -86,7 +104,10 @@ Better solution:
 ```
 x, y = y, x
 ```
-Goal: Combine multiple string values
+&nbsp;  
+
+> Goal: Combine multiple string values
+
 Possible solution: 
 ```
 
