@@ -58,6 +58,7 @@ on workflow:
 - [Advanced R](https://adv-r.hadley.nz/)
 - [R markdown: The definitive guide](https://bookdown.org/yihui/rmarkdown/)
 - [Practical Vim](https://bookarchive.net/pdf/practical-vim/)
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 - [Data Science: A First Introduction](https://datasciencebook.ca/)
 - [Reproducible and Trustworthy Workflows for Data Science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/README.html)
 
