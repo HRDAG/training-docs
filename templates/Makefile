@@ -27,7 +27,7 @@ $(output): \
 
 $(output):\
 		$(src_R) \
-$(input)
+		$(input) \
 	-mkdir output
 	Rscript --vanilla $< \
 		--input=$(input) \
