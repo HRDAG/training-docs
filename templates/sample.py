@@ -17,15 +17,10 @@ def check_asserts( val ):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_mp", default=None)
-    parser.add_argument("--input_663", default=None)
-    parser.add_argument("--input_173", default=None)
+    parser.add_argument("--input", default=None)
     parser.add_argument("--output", default=None)
     args = parser.parse_args()
-    assert Path(args.input_mp).exists()
-    assert Path(args.input_663).exists()
-    assert Path(args.input_173).exists()
-    assert args.output.endswith(".parquet")
+    assert Path(args.input).exists()
     return args
 
 
