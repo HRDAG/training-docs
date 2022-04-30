@@ -5,6 +5,7 @@
 # Project-Name/parent-task/core-task/src/script.py
 
 # dependencies
+from pathlib import Path
 import argparse
 import logging
 import pandas as pd
@@ -16,25 +17,40 @@ def check_asserts( val ):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input")
-    parser.add_argument("--output")
-    return parser.parse_args()
+    parser.add_argument("--input_mp", default=None)
+    parser.add_argument("--input_663", default=None)
+    parser.add_argument("--input_173", default=None)
+    parser.add_argument("--output", default=None)
+    args = parser.parse_args()
+    assert Path(args.input_mp).exists()
+    assert Path(args.input_663).exists()
+    assert Path(args.input_173).exists()
+    assert args.output.endswith(".parquet")
+    return args
 
 
-def get_logging(logname):
-        logging.basicConfig(level=logging.DEBUG,
-                            format='%(asctime)s %(levelname)s %(message)s',
-                            handlers=[logging.FileHandler(logname),
-                            logging.StreamHandler()])
+def get_logger(sname, file_name=None):
+    logger = logging.getLogger(sname)
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter("%(asctime)s - %(levelname)s " +
+                                  "- %(message)s", datefmt='%Y-%m-%d %H:%M:%S')
+    stream_handler = logging.StreamHandler(stdout)
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
+    if file_name:
+        file_handler = logging.FileHandler(file_name)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+    return logger
 
 # main
 if __name__ == '__main__':
 
     # setup logging
-    get_logging("output/core-task.log”)
+    logger = get_logger(__name__, "output/script-name.log")
 
     # arg handling
-    args = getargs()
+    args = get_args()
     input_f = args.input
     output_f = args.output
 
@@ -43,13 +59,10 @@ if __name__ == '__main__':
     raw_df = pd.read_ext(input_f)
     check_asserts(raw_df)
     
+    # do stuff, more verification
     logging.info('__main__ Summary:')
-    logging.info('====================')    
-    logging.info('{:50}{}'.format('initial shape:', raw_df.shape ))
-    logging.info('{:50}{}'.format('initial info:', raw_df.info() ))
-    logging.info('\n')
     
-    # save data
+    # save data, final verification
     raw.to_parquet(output_f)
     
     logging.info("done.")
