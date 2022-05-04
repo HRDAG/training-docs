@@ -6,6 +6,7 @@
 
 # dependencies
 from pathlib import Path
+from sys import stdout
 import argparse
 import logging
 import pandas as pd
