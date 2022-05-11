@@ -10,7 +10,7 @@ library(assertr)
 library(logging)
 
 # setup logging
-logname <- "output/core-task.log”
+logname <- "output/core-task.log"
 basicConfig()
 addHandler(writeToFile, logger="company", file=logname)
 
