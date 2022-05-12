@@ -7,7 +7,6 @@
 # dependencies
 library(argparse)
 library(assertr)
-library(logging)
 
 # setup logging
 logname <- "output/core-task.log"
