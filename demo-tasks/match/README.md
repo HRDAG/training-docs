@@ -88,10 +88,12 @@ data:
 - blocking: a coarse filtering for a set of "candidate pairs" that may contain
   non-matches, but should include all truly co-referent pairs. Directly
   comparing every pair of records in a database is not going to be practical
-  for datasets that have more than a few thousand records.
+  for datasets that have more than a few thousand records. Reference: [Database
+  Deduplication to Identify Victims of Human Rights
+  Violations](https://hrdag.org/2016/01/08/a-geeky-deep-dive-database-deduplication-to-identify-victims-of-human-rights-violations/)
 - classify: we use a supervised binary classifier to classify blocked pairs as
   either co-referent or not. Since calculating features for large numbers of
-  candidate pairs (example: for the CO project, blocking generates around 130
+  candidate pairs (example: for the CO project, blocking generates around 90
   million pairs) can get complicated and messy, we separate that step into its
   own task and call it `compare`.
 - cluster: If the classifier deems A to be co-referent with B, and B to be
@@ -99,12 +101,83 @@ data:
   how do we group records into entities? The cluster step takes pairwise
   classification scores, and outputs a data frame with two columns, `recordid`
   and `entity_id`. All records with the same entity id are considered to refer
-  to the same person.
+  to the same person. Reference: [Clustering and solving the right
+  problem](https://hrdag.org/2016/07/28/clustering-and-solving-the-right-problem/)
+- merge: given 
 
- Depending on context and complexity, either or both of blocking and
- classification can rely on machine learning models, rather than hand-written
- code. The `TS-\*` part of the pipeline manages the generation and collection
- of training samples to supervise these processes.
+Depending on context and complexity, either or both of blocking and
+classification can rely on machine learning models, rather than hand-written
+code. The `TS-*` part of the pipeline manages the generation and collection of
+training samples to supervise these processes.
 
 ### Blocking
 
+```
+match
+├── ...
+├── blocking-features
+├── blocking
+└── ...
+```
+
+### Classification
+
+```
+match
+├── ...
+├── compare
+├── classify
+└── ...
+```
+
+### Clustering and creating entity records
+
+```
+match
+├── ...
+├── cluster
+├── merge
+├── export
+└── ...
+```
+
+### Collecting hand-labeled examples: the TS-\* tasks
+
+```
+match
+├── ...
+├── TS-draw
+├── TS-import
+├── TS-compare
+├── TS-integrate
+└── TS-train
+```
+
+**NOTE:** by convention, we represent a pair of records by their recordids with
+the smaller one coming first. For recordids `r1` and `r2`, that means `(r1,r2)`
+is considered the same pair as `(r2,r1)`
+
+- `TS-draw`: samples data for labeling. We can sample data in "block" or "pair"
+  format, there are good reasons to include both types. Sampling might be more
+  or less random, or might be targeted. All sampling code can live in
+  `TS-draw`, which also includes code required to export human-reviewable
+  spreadsheets.
+
+- `TS-integrate`: eventually we end up with training data from a variety of
+  sources, including labeled pairs, labeled blocks, not to mention the negative
+  pairs implied by labeled blocks. This task outputs the full set of labeled
+  data used to train classifiers, search for blocking rules, and break up large
+  clusters. There are usually two big outputs: `positive-pairs` is used in
+  blocking, and can just be a table with two columns, `recordid1` and
+  `recordid2`. `labeled-pairs` includes both positive and negative pairs, and
+  importantly will include a large sample of implied negative pairs from
+  labeled blocks.
+
+- `TS-compare`: this is the equivalent in the TS cycle to the `compare` task in
+  the main match pipeline. We can usually re-use the same source code for both
+  tasks, the only difference is the input to `TS-compare` is
+  `TS-integrate/output/labeled-pairs.xyz` whereas the input to `compare` is
+  `blocking/output/candidate-pairs.xyz`
+
+- `TS-train`: train a classifier, using features from `TS-compare` and labels
+  from `TS-integrate`.
