@@ -47,3 +47,4 @@ stopifnot(
     nrow(out) == length(unique(out$entity_id))
 )
 
+write_parquet(out, "output/music-entities.parquet")

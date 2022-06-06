@@ -6,12 +6,12 @@ ents <- read_parquet("output/entity-ids.parquet")
 
 degree_distribution <- ents %>%
     distinct(recordid, degree) %>%
-    pluck("degree") %>% quantile(c(seq(.5,.9,.1), .95))
+    pluck("degree") %>% quantile(c(seq(.5,.9,.1), .95, .99, 1))
 
 recs_per_entity <- ents %>%
     distinct(entity_id, entity_nrecs) %>%
     pluck("entity_nrecs") %>%
-    quantile(c(seq(.5, .9, .1), .95))
+    quantile(c(seq(.5, .9, .1), .95, .99, 1))
 
 n_entity <- length(unique(ents$entity_id))
 

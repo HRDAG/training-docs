@@ -7,27 +7,6 @@ sources), and output a dataset that has one row per distinct person, by linking
 co-referent records and using their content to assemble a synthetic "entity"
 record.
 
-
-## About the example
-
-Though the techniques used here can be used in a variety of record linkage
-contexts, we most frequently use them for deduplicating databases of deaths or
-disappearances in conflicts. In that context, each record will have at least
-name, location, and date available to match on.
-
-For training purposes, this repo includes a demo match task across databases of
-music, where each row of data describes a single song. Our task is to
-deduplicate/match rows that correspond to the same song. In this case, each
-record has at least: artist name, song name, album name, release date,
-genre(s), and song length available to match on. Though the context is very
-different, we'll explore the same workflows and techniques that we use for
-deduplicating databases of deaths and disappearances.
-
-The data for the demo task comes from [CompERBench: Complementing Entity
-Matching Benchmark
-Tasks](http://data.dws.informatik.uni-mannheim.de/benchmarkmatchingtasks/), and
-the `setup` directory downloads the required files using `curl`.
-
 ## Context
 
 Record linkage will depend on data that is already cleaned and canonicalized.
@@ -202,3 +181,40 @@ is considered the same pair as `(r2,r1)`
 
 - `TS-train`: train a classifier, using features from `TS-compare` and labels
   from `TS-integrate`.
+
+## About the example
+
+Though the techniques used here can be used in a variety of record linkage
+contexts, we most frequently use them for deduplicating databases of deaths or
+disappearances in conflicts. In that context, each record will have at least
+name, location, and date available to match on.
+
+For training purposes, this repo includes a demo match task across databases of
+music, where each row of data describes a single song. Our task is to
+deduplicate/match rows that correspond to the same song. In this case, each
+record has at least: artist name, song name, album name, release date,
+genre(s), and song length available to match on. Though the context is very
+different, we'll explore the same workflows and techniques that we use for
+deduplicating databases of deaths and disappearances.
+
+The data for the demo task comes from [CompERBench: Complementing Entity
+Matching Benchmark
+Tasks](http://data.dws.informatik.uni-mannheim.de/benchmarkmatchingtasks/), and
+the `setup` directory downloads the required files using `curl`. To run the
+setup task, enter the directory and type `make`:
+
+```bash
+$ cd setup && make
+```
+
+Then, go into the `individual` directory, read the README, run the
+individual import tasks, and complete the exercises.
+
+Once the `indiviual` tasks are built, you can run the `match` pipeline:
+
+```bash
+$ cd match && make
+```
+
+Make sure the pipeline runs without errors or debug as necessary. Then try out
+the exercises and further reading suggested in `match/README.md`
