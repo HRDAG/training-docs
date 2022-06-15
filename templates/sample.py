@@ -51,16 +51,16 @@ if __name__ == '__main__':
     output_f = args.output
 
     # read data, initial verification
-    logging.info("Loading data.")
+    logger.info("Loading data.")
     raw_df = pd.read_ext(input_f)
     check_asserts(raw_df)
     
     # do stuff, more verification
-    logging.info('__main__ Summary:')
+    logger.info('__main__ Summary:')
     
     # save data, final verification
     raw.to_parquet(output_f)
     
-    logging.info("done.")
+    logger.info("done.")
     
 # done.
