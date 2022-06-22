@@ -11,6 +11,9 @@ you can set these in your `init.vim`. To understand what they do, use the colon
 prompt in neovim, for example if you are in normal mode, you can type `:help
 hiden` to get a detailed explanation.
 
+- `set ignorecase` and `set smartcase`: these are both related to the
+  functionality of search
+
 - `syntax enable`: enables syntax highlighting, this is huge for making code
   easier to read and write, but it'll work best if you find a colorscheme that
   is both comfortable to look at, and that clearly distinguishes between
