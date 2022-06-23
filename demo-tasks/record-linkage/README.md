@@ -89,13 +89,14 @@ data:
   non-matches, but should include all truly co-referent pairs. Directly
   comparing every pair of records in a database is not going to be practical
   for datasets that have more than a few thousand records. Reference: [Database
-  Deduplication to Identify Victims of Human Rights
-  Violations](https://hrdag.org/2016/01/08/a-geeky-deep-dive-database-deduplication-to-identify-victims-of-human-rights-violations/)
+  Deduplication to Identify Victims of Human Rights Violations](https://hrdag.org/2016/01/08/a-geeky-deep-dive-database-deduplication-to-identify-victims-of-human-rights-violations/)
+
 - classify: we use a supervised binary classifier to classify blocked pairs as
   either co-referent or not. Since calculating features for large numbers of
   candidate pairs (example: for the CO project, blocking generates around 90
   million pairs) can get complicated and messy, we separate that step into its
   own task and call it `compare`.
+
 - cluster: If the classifier deems A to be co-referent with B, and B to be
   co-referent with C, but does not give a high score to the pair (A,C), then
   how do we group records into entities? The cluster step takes pairwise
@@ -103,7 +104,12 @@ data:
   and `entity_id`. All records with the same entity id are considered to refer
   to the same person. Reference: [Clustering and solving the right
   problem](https://hrdag.org/2016/07/28/clustering-and-solving-the-right-problem/)
-- merge: given 
+
+- merge: once we have grouped co-referent records together, we run into the
+  problem of outputting a single canonical record representing that entity.
+  Different records referring to the same entity may have conflicting values
+  for some fields, and so this step needs to make decisions about how to
+  resolve those discrepancies
 
 Depending on context and complexity, either or both of blocking and
 classification can rely on machine learning models, rather than hand-written
