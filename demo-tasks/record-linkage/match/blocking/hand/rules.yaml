@@ -1,0 +1,23 @@
+r1: 
+  - artist_name_sx
+  - song_name_first_5
+  - released_yrmo
+
+r2:
+  - album_name_first_5
+  - artist_name_sx
+  - released_yrmo
+  - time_secs_round10
+
+r3:
+  - genre_1
+  - released_yrmo
+  - time_secs_round10
+  - genre_n
+
+r4:
+  - artist_name_sx
+  - album_name_first_5
+  - time_secs_round10
+  - genre_1
+  - genre_n
