@@ -1,13 +1,17 @@
+# vim: set ts=4 sts=0 sw=4 si fenc=utf-8 et:
+# vim: set fdm=marker fmr={{{,}}} fdl=0 foldcolumn=4:
 # Authors:     FL
 # Maintainers: FL
 # Copyright:   YYYY, HRDAG, GPL v2 or later
 # =========================================
 # Project-Name/parent-task/core-task/src/script.R
 
-# dependencies
-library(argparse)
-library(assertr)
+# ---- dependencies {{{
+library(pacman)
+pacman::p_load(argparse, assertr, logger, tidyverse)
+#}}}
 
+# ---- main {{{
 # setup logging
 logname <- "output/core-task.log"
 basicConfig()
@@ -32,5 +36,6 @@ dat %>%
 write.parquet(dat, output)
 
 loginfo("done", logger="")
+#}}}
 
 # done.

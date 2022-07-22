@@ -1,19 +1,22 @@
+# vim: set ts=4 sts=0 sw=4 si fenc=utf-8 et:
+# vim: set fdm=marker fmr={{{,}}} fdl=0 foldcolumn=4:
 # Authors:     FL
 # Maintainers: FL
 # Copyright:   YYYY, HRDAG, GPL v2 or later
 # =========================================
 # Project-Name/parent-task/core-task/src/script.py
 
-# dependencies
+# ---- dependencies {{{
 from pathlib import Path
 from sys import stdout
 import argparse
 import logging
 import pandas as pd
+#}}}
 
-# support methods
-def check_asserts( val ):
-    assert val
+# ---- support methods {{{
+def initial_asserts():
+    return 1 
 
 
 def get_args():
@@ -39,9 +42,13 @@ def get_logger(sname, file_name=None):
         logger.addHandler(file_handler)
     return logger
 
-# main
-if __name__ == '__main__':
 
+def final_asserts(df):
+    return 1
+#}}}
+
+# ---- main {{{
+if __name__ == '__main__':
     # setup logging
     logger = get_logger(__name__, "output/script-name.log")
 
@@ -53,14 +60,15 @@ if __name__ == '__main__':
     # read data, initial verification
     logger.info("Loading data.")
     raw_df = pd.read_ext(input_f)
-    check_asserts(raw_df)
+    initial_asserts(raw_df)
     
     # do stuff, more verification
-    logger.info('__main__ Summary:')
-    
+    final_asserts(raw_df)
+
     # save data, final verification
-    raw.to_parquet(output_f)
+    raw_df.to_parquet(output_f)
     
     logger.info("done.")
     
+#}}}
 # done.
