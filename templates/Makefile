@@ -5,28 +5,38 @@
 # Project-Name/parent-task/core-task/Makefile
 
 input := input/filename.ext
-output := output/filename.ext
 
-src_py := src/code.py
-src_R := src/code.R
+.PHONY: help all clean
 
-.PHONY: all clean
+help:
+	@echo "---------------HELP-----------------------------"
+	@echo "To purge existing output, run make clean"
+	@echo "To rebuild all output, run make all"
+	@echo "To rebuild a single target, run make target_name"
+	@echo "------------------------------------------------"
 
-all: $(output)
+all: subtask_target sym_target py_target r_target
 
 clean: 
 	-rm -r output/*
 
-$(output): \
-		$(src_py) \
+subtask_target: dependency
+	cd $@ && make
+
+sym_target: dependency
+	-mkdir output
+	cd output && ln -s ../$< .
+
+py_target: \
+		src/task.py \
 		$(input)
 	-mkdir output
 	python3 $< \
 		--input=$(input) \
 		--output=$@
 
-$(output):\
-		$(src_R) \
+r_target:\
+		src/task.R \
 		$(input) \
 	-mkdir output
 	Rscript --vanilla $< \
