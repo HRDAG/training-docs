@@ -1,12 +1,21 @@
+# vim: set ts=4 sts=0 sw=4 si fenc=utf-8 et:
+# vim: set fdm=marker fmr={{{,}}} fdl=0 foldcolumn=4:#
 # Authors:     FL
 # Maintainers: FL
 # Copyright:   YYYY, HRDAG, GPL v2 or later
 # =========================================
 # Project-Name/parent-task/core-task/Makefile
 
-input := input/filename.ext
+# ---- dependencies {{{
+HERE := $(shell git rev-parse --show-toplevel)
+input := HERE/other-parent/other-core/output/filename.ext
+subtask_target := HERE/parent-task/sub-task
+py_target := HERE/parent-task/core-task/output/py-out.parquet
+r_target := HERE/parent-task/core-task/output/r-out.parquet
+# }}}
 
-.PHONY: help all clean
+# ---- standard {{{
+.PHONY: help all clean sym_target
 
 help:
 	@echo "---------------HELP-----------------------------"
@@ -19,7 +28,11 @@ all: subtask_target sym_target py_target r_target
 
 clean: 
 	-rm -r output/*
+# }}}
 
+# "$<" tells Make to fill in the variable with the first dependency passed to the target
+# "$@" tells Make to fill in the variable with the target name
+# ---- task-specific {{{
 subtask_target: dependency
 	cd $@ && make
 
@@ -42,5 +55,6 @@ r_target:\
 	Rscript --vanilla $< \
 		--input=$(input) \
 		--output=$@
+# }}}
+ 
 # done.
-
