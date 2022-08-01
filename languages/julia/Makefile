@@ -5,17 +5,20 @@
 # Copyright:   2022, HRDAG, GPL v2 or later
 # =========================================
 
-readme := ./dfs.md
-script := src/dfs.jl
-
 .PHONY: all clean
 
-all: $(readme)
+all: \
+	output/dfs.md \
+	output/basics.md
 
 clean: 
 	-rm -r output/*
 
-$(readme): $(script)
+Manifest.toml: Project.toml
 	julia --project -e "using Pkg; Pkg.resolve(); Pkg.instantiate()"
-	julia --project --threads=auto \
-		-e 'using Literate; Literate.markdown("$<", outputdir=".", flavor=Literate.CommonMarkFlavor(); config=Dict("execute" => true))'
+
+output/%.md: src/%.jl Manifest.toml
+	-mkdir output
+	julia --project --threads=auto src/compile-md.jl $< output
+
+# done.

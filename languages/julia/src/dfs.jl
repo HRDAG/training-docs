@@ -13,7 +13,7 @@ structure most similar to dataframes in R (similar to base R's `data.frame` or
 using DataFrames
 using CSV
 
-mtcars = CSV.read("input/mtcars.csv", DataFrame, delim="|")
+mtcars = CSV.read("../input/mtcars.csv", DataFrame, delim="|")
 describe(mtcars)
 
 #=
@@ -94,7 +94,7 @@ returns an iterator over rows:
 
 =#
 
-mtcars_streaming = CSV.File("input/mtcars.csv", delim ="|");
+mtcars_streaming = CSV.File("../input/mtcars.csv", delim ="|");
 
 for row in mtcars_streaming
     println(row.car, ": ", row.mpg)
