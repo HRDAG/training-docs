@@ -107,14 +107,14 @@ function(x) 2x + 7 end
 but can more concisely be passed as an argument to a higher order function:
 
 ````julia
-map(x -> 2x + 8, [1, 2, 3])
+map(x -> 2x + 7, [1, 2, 3])
 ````
 
 ````
 3-element Vector{Int64}:
- 10
- 12
- 14
+  9
+ 11
+ 13
 ````
 
 You can pipe functions together using the `|>` operator:
@@ -124,7 +124,7 @@ rand(10) |> sum |> round
 ````
 
 ````
-5.0
+6.0
 ````
 
 ## Some useful built-in data structures
