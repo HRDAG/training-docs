@@ -8,10 +8,10 @@
 
 # ---- dependencies {{{
 HERE := $(shell git rev-parse --show-toplevel)
-input := $HERE/other-parent/other-core/output/filename.ext
-subtask_target := $HERE/parent-task/sub-task
-py_target := $HERE/parent-task/core-task/output/py-out.parquet
-r_target := $HERE/parent-task/core-task/output/r-out.parquet
+input := $(HERE)/other-parent/other-core/output/filename.ext
+subtask_target := $(HERE)/parent-task/sub-task
+py_target := $(HERE)/parent-task/core-task/output/py-out.parquet
+r_target := $(HERE)/parent-task/core-task/output/r-out.parquet
 # }}}
 
 # ---- standard {{{
