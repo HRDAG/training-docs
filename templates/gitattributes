@@ -1,0 +1,4 @@
+# Track all input/, output/, and frozen/ directories for large files
+**/input/** filter=lfs diff=lfs merge=lfs -text
+**/frozen/** filter=lfs diff=lfs merge=lfs -text
+**/output/** filter=lfs diff=lfs merge=lfs -text

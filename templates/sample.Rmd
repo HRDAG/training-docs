@@ -1,0 +1,16 @@
+---
+title: A report
+author:
+- "[link to author page](https://hrdag.org/people/)"
+date: DD month, YYYY
+output: html_document
+---
+
+# An Rmd document
+
+```{r}
+x <- 7
+x + 14
+```
+
+The value of x is `r x`
