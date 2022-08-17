@@ -1,0 +1,83 @@
+---
+title: "MakeFile"
+output: pdf_document
+header-includes:
+- \usepackage{float}
+- \usepackage{hyperref}
+- \hypersetup{
+     colorlinks=true,
+     linkcolor=black,
+     citecolor = black,
+     urlcolor=blue,
+     }
+fontsize: 12pt
+---
+
+# What is a MakeFile? 
+
+A MakeFile is a file to compile code. We have one of them for each of the tasks that we create in our data analysis. We locate it inside of a task but outside of any of the directories (input, output, src, hand, frozen).
+
+# What should it look like?
+
+1. It must always contain a header as any other text file we are creating containing:
+
+Author: 
+Maintainers:
+Date: Oct. 16 2019
+License: 
+ ------
+path
+
+2. Then you must follow this structure:
+
+2.1 For R
+
+.PHONY: all clean
+ 
+all:  path(s) to the output
+ 
+clean:
+	rm output/*
+ 
+path to the output1: \
+		script for creating that output 
+	Rscript --vanilla $<
+ 
+path to the output1: \
+		script for creating that output 
+	Rscript --vanilla $< 
+
+3. Example 
+
+We want to create a MakeFile for our task "append" in our data analysis about social movement leaders killings in Colombia. The output will be a database with all of the different years we have. We will also create a logfile with basic information that we will use later in our report.
+
+Author: VRA
+Maintainers: VRA, PB, CAF
+Date: Oct. 16 2019
+License: GPL-2 or newer
+------
+CO-leaders/append/Makefile
+
+.PHONY: all clean
+
+all: output/allyears.rds \
+	output/logfileappend.log
+
+clean:
+	rm output/*
+
+output/allyears.rds: \
+		src/appendyears.R 
+	cd ../clean && make
+	Rscript --vanilla $<
+
+output/logfileappend.log: \
+		src/appendyears.R
+	cd ../clean && make
+	Rscript --vanilla $<
+
+done
+
+
+<!-- done -->
+
