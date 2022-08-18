@@ -20,8 +20,16 @@ R Performance tips
   note about parallelism</a>
 - <a href="#a-note-about-data-frames" id="toc-a-note-about-data-frames">A
   note about data frames</a>
+  - <a href="#the-two-kinds-of-in-memory-data-frames"
+    id="toc-the-two-kinds-of-in-memory-data-frames">The two kinds of
+    in-memory data frames</a>
   - <a href="#memory" id="toc-memory">memory</a>
   - <a href="#misc" id="toc-misc">misc</a>
+  - <a
+    href="#example-free-speedups-by-replacing-dataframetibble-with-datatable"
+    id="toc-example-free-speedups-by-replacing-dataframetibble-with-datatable">example:
+    free speedups by replacing <code>data.frame/tibble</code> with
+    <code>data.table</code></a>
 - <a href="#further-reading" id="toc-further-reading">Further reading</a>
 
 # The main rules
@@ -115,9 +123,9 @@ bm(
     ## # A tibble: 3 × 4
     ##   expression                 min   median mem_alloc
     ##   <bch:expr>            <bch:tm> <bch:tm> <bch:byt>
-    ## 1 loop_version(small)      6.6ms   6.65ms   53.62KB
-    ## 2 vapply_version(small)   6.52ms   6.61ms    3.95KB
-    ## 3 purrr_version(small)    6.54ms   6.61ms   18.02KB
+    ## 1 loop_version(small)     6.64ms    6.7ms   53.62KB
+    ## 2 vapply_version(small)   6.53ms    6.6ms    3.95KB
+    ## 3 purrr_version(small)    6.55ms   6.61ms   18.02KB
 
 # . . . vs multicore processing . . .
 
@@ -149,8 +157,8 @@ bm(
     ## # A tibble: 2 × 4
     ##   expression                                      min   median mem_alloc
     ##   <bch:expr>                                 <bch:tm> <bch:tm> <bch:byt>
-    ## 1 purrr_version(large)                          893ms    893ms        NA
-    ## 2 multi_version(large, strategy = multicore)    269ms    306ms        NA
+    ## 1 purrr_version(large)                          929ms    929ms        NA
+    ## 2 multi_version(large, strategy = multicore)    237ms    246ms        NA
 
 # … vs. vectorization
 
@@ -172,9 +180,9 @@ bm(
     ## # A tibble: 3 × 4
     ##   expression                                      min   median mem_alloc
     ##   <bch:expr>                                 <bch:tm> <bch:tm> <bch:byt>
-    ## 1 purrr_version(small)                          6.5ms   6.56ms        NA
-    ## 2 multi_version(small, strategy = multicore)     90ms  89.97ms        NA
-    ## 3 vectorized_version(small)                   177.2µs 184.75µs        NA
+    ## 1 purrr_version(small)                         6.49ms   6.56ms        NA
+    ## 2 multi_version(small, strategy = multicore)  80.85ms  81.67ms        NA
+    ## 3 vectorized_version(small)                  179.78µs 183.52µs        NA
 
 These speedups are still present in the face of larger data:
 
@@ -190,9 +198,9 @@ bm(
     ## # A tibble: 3 × 4
     ##   expression                                      min   median mem_alloc
     ##   <bch:expr>                                 <bch:tm> <bch:tm> <bch:byt>
-    ## 1 purrr_version(large)                          759ms    759ms        NA
-    ## 2 multi_version(large, strategy = multicore)  248.5ms  257.7ms        NA
-    ## 3 vectorized_version(large)                    18.1ms   18.5ms        NA
+    ## 1 purrr_version(large)                        754.8ms  754.8ms        NA
+    ## 2 multi_version(large, strategy = multicore)  245.8ms  246.4ms        NA
+    ## 3 vectorized_version(large)                    18.3ms   18.4ms        NA
 
 Finally, notice that even if our task only requires counting the number
 of matches, allocating the full logical vector using the vectorized
@@ -215,8 +223,8 @@ bm(
     ## # A tibble: 2 × 4
     ##   expression                          min   median mem_alloc
     ##   <bch:expr>                     <bch:tm> <bch:tm> <bch:byt>
-    ## 1 noalloc_version(large)          738.6ms  738.6ms    17.1KB
-    ## 2 sum(vectorized_version(large))   18.3ms   18.5ms   390.7KB
+    ## 1 noalloc_version(large)          743.6ms  743.6ms    17.1KB
+    ## 2 sum(vectorized_version(large))   18.4ms   18.5ms   390.7KB
 
 # lookup/canonicalize
 
@@ -262,7 +270,7 @@ bm(
     ## # A tibble: 2 × 4
     ##   expression          min   median mem_alloc
     ##   <bch:expr>     <bch:tm> <bch:tm> <bch:byt>
-    ## 1 vec_dict[[k]]     656ns    738ns        0B
+    ## 1 vec_dict[[k]]      82ns    164ns        0B
     ## 2 hash_dict[[k]]        0     41ns        0B
 
 However, for the common scenario where we have to lookup and replace an
@@ -281,8 +289,8 @@ bm(
     ## # A tibble: 2 × 4
     ##   expression      min   median mem_alloc
     ##   <bch:expr> <bch:tm> <bch:tm> <bch:byt>
-    ## 1 vec           146µs    154µs   152.8KB
-    ## 2 hash          626µs    644µs    78.2KB
+    ## 1 vec           123µs    132µs   152.8KB
+    ## 2 hash          624µs    639µs    78.2KB
 
 # copy-on-modify
 
@@ -492,8 +500,8 @@ bm(
     ## # A tibble: 2 × 4
     ##   expression              min   median mem_alloc
     ##   <bch:expr>         <bch:tm> <bch:tm> <bch:byt>
-    ## 1 myfunc(testxs)        337ms    338ms   76.29MB
-    ## 2 myfunc_cpp(testxs)    179ms    181ms    2.49KB
+    ## 1 myfunc(testxs)        337ms    337ms   76.29MB
+    ## 2 myfunc_cpp(testxs)    179ms    179ms    2.49KB
 
 # A note about parallelism
 
@@ -532,6 +540,32 @@ of database backends](https://github.com/r-dbi/backends#readme)
 including postgres, sqlite, bigquery, redshift, spark, and so on. With
 [dbplyr](https://dbplyr.tidyverse.org/) you can switch from a local data
 frame to a dbi-backed data frame without having to change your code.*
+
+## The two kinds of in-memory data frames
+
+- `base::data.frame` and `tibble::tbl_df`: R’s `base` package (that is
+  loaded by default when you start R) defines the `data.frame`, as well
+  as a handful of functions for indexing, subsetting, and summarizing
+  `data.frame`s. The `tbl_df` that is common across
+  [tidyverse](https://www.tidyverse.org/) packages, is just a
+  `base::data.frame` with a few tweaks, and for all performance purposes
+  can be thought of as the same as `base::data.frame`
+
+- `data.table::data.table`: The [`data.table`
+  package](https://www.tidyverse.org/) implements a totally separate
+  version of data frames, optimized for speed and memory efficiency.
+  `data.table` comes with its own functionality for indexing and
+  subsetting that is similar to `base`, but cleaner and easier to read
+  and write.
+
+The `dplyr` package defines a family of functions (`select`, `mutate`,
+`filter`, `group_by`, `summarize`, etc.) that operate on data frames and
+return data frames, making it easy to compose them and chain together
+longer queries. These functions are defined on `base::data.frame` as
+well as `data.table::data.table` (once you’ve installed the [dtplyr
+package](https://dtplyr.tidyverse.org/)). This makes it easier to switch
+between packages without lots of changes to your code (see [the example
+below](#example-free-speedups-by-replacing-data.frametibble-with-data.table)).
 
 ## memory
 
@@ -587,6 +621,64 @@ problems:
   groups, as is common in blocking and record linkage. In those
   settings, using `data.table` rather than `dplyr` or base R will have
   noticeable benefits even without especially large data.
+
+## example: free speedups by replacing `data.frame/tibble` with `data.table`
+
+During blocking, we have to repeatedly calculate the number of pairs
+generated by a given blocking rule.
+
+``` r
+make_grouped_tbl <- function(len, n_distinct_keys = len/15) {
+    keys <- stri_rand_strings(n_distinct_keys, 50)
+    tibble(
+        key = sample(keys, len, replace = T),
+        somedata = runif(len)
+    )
+}
+
+summarise_groups <- function(records, keycol)
+     records %>% group_by(key) %>% summarise(n = n())
+
+calc_pairs <- function(smry) {
+     ns <- smry$n
+     sum(ns * (ns - 1) / 2)
+}
+
+set.seed(19481210)
+ex_tbl <- make_grouped_tbl(100000)
+ex_tbl %>% summarise_groups %>% calc_pairs
+```
+
+    ## [1] 749288
+
+Because `dplyr` functions work with `data.table`s, we don’t have to
+change much about our code to switch backends. The two changes are: add
+`library(dtplyr)` during setup, and add `as_tibble` after
+`summarise_groups`:
+
+``` r
+library(data.table)
+library(dtplyr)
+ex_dt <- data.table(ex_tbl)
+ex_dt %>% summarise_groups %>% as_tibble %>% calc_pairs
+```
+
+    ## [1] 749288
+
+For the most fair comparison, in my benchmarking code I include the time
+it takes to convert the input to a data.table rather than feeding it
+`ex_dt` directly:
+
+``` r
+bm("data.frame" = ex_tbl %>% summarise_groups %>% calc_pairs,
+   "data.table" = ex_tbl %>% data.table %>% summarise_groups %>% as_tibble %>% calc_pairs)
+```
+
+    ## # A tibble: 2 × 4
+    ##   expression      min   median mem_alloc
+    ##   <bch:expr> <bch:tm> <bch:tm> <bch:byt>
+    ## 1 data.frame   46.8ms   47.2ms    2.36MB
+    ## 2 data.table   7.02ms   13.4ms    5.98MB
 
 # Further reading
 
