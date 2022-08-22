@@ -5,11 +5,11 @@ Python es uno de los dos lenguajes que usamos para la mayor parte de nuestro an�
 ## Pasos de configuración
 
 1. Visita https://docs.anaconda.com/anaconda/install/ y selecciona tu sistema operativo.
-2. Selecciona la versión más reciente de python compatible con Anaconda. Al 18 de agosto de 2022, es python 3.9.6.
+2. Selecciona la versión más reciente de python que sea compatible con Anaconda. Al 18 de agosto de 2022, ésta es python 3.9.6.
 3. Sigue los pasos indicados por el instalador.
 
-Si estás usando una shell no compatible con POSIX, como `fish`, tendrás que agregar anaconda a tu ruta de forma manual. (Si no sabes qué significa esto, no te preocupes.)
+Si utilizas una shell no compatible con POSIX, como `fish`, tendrás que agregar anaconda a tu ruta de forma manual. (Si no sabes qué significa esto, no te preocupes.)
 
 ## jupyter
 
-`jupyter` es un interfaz interactivo para python, lo cual utilizamos para la exploración de datos y prototipación de código. Viene incluido con Anaconda-puedes simplemente ejecutar `jupyter notebook` en tu terminal y aparece.
+`jupyter` es una interfaz interactiva para python que utilizamos para la exploración de datos y prototipación de código. Viene incluido con Anaconda-puedes simplemente ejecutar `jupyter notebook` en tu terminal y aparece.

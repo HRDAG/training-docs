@@ -1,27 +1,27 @@
 # Bash
 
-Bash is a language to interact with the Unix/Linux file system and process tree. It’s a sort of meta-language, within which everything else on your computer lives.
+Bash es un lenguaje para interactuar con el árbol de procesos y el sistema de archivos de Unix/Linux. Es un tipo de metalenguaje, dentro del cual vive todo lo demás en tu computadora.
 
-Here are some things to try to get started with Bash:
+Para empezar a trabajar en Bash, intenta lo siguiente:
 
-Open up your terminal, and type in `cd`. This will change directories (folders are called directories in Unix) to the 'home' directory, which is unique for each user. Now, if you type `ls`, it should list all the files and directories inside your home directory. This should list all your non-hidden files and directories in whatever directory you're in. But what about the hidden files? Those files are just the files that start with dots (.). To see them, use `ls -a`. These hidden 'dotfiles' will come up later, when you’re customizing your environment.
+Abre tu terminal y escribe `cd`. Esto cambiará directorios (las carpetas en Unix se llaman directorios) al directorio 'home', tu directorio personal, único para cada usuario. Ahora, si escribes `ls`, debe aparecer una lista de todos los archivos y directorios dentro de tu directorio 'home'. Esto debe incluir todos los archivos y directorios no ocultos dentro del directorio en el que estés. ¿Y los archivos ocultos? Los archivos ocultos son solamente los que empiezan con un punto (.). Para verlos, usa el comando `ls -a`. Estos 'dotfiles' ocultos serán relevantes después, cuando personalices el entorno de tu terminal.
 
-You’ve probably noticed something else by now too, which is the prompt. This is the text that is displayed before your commands. For you it probably looks like: `<machine-name>:<directory> <account-name>$`. This prompt is bad for a couple of reasons: it has no color, which helps your eye differentiate between values; it's laid out poorly, so it's hard to read; and it doesn't have your complete path. 
+Puede que ya hayas notado el texto que aparece antes de tus comandos, conocido como el indicador (o 'prompt') del intérprete de comandos. El tuyo probablemente sea algo así: `<nombre-de-computadora>:<directorio> <nombre-de-cuenta>$`. No es recomendable usar un indicador así por varias razones: no tiene color, lo cual ayuda a los ojos a diferenciar entre valores; es difícil de leer; y no incluye tu ruta completa.
 
-With a complete path, I can tell who I am, where I am (eleanor for example) and where I am specifically (`~/git/GT-fingerprints/individual`). I then have my command on its own line so if I have an especially long path, the command I type in will still have room. You should figure out what prompt you'd like to have, and then program it in! Here's some basic tips:
+Con una ruta completa, se puede saber quién eres, en qué computadora estás trabajando (en eleanor, por ejemplo) y en qué directorio te encuentras (`~/git/GT-fingerprints/individual`). Asímismo, se puede dejar el comando en su propia línea para que quepa aunque sea particularmente larga la ruta del directorio de trabajo. Recomiendo determinar qué tipo de indicador te gustaría tener y después programarlo en tus configuraciones. He aquí unas sugerencias básicas.
 
-1. Assign whatever formula to the `PS1` variable in bash
-2. Do all your work in `~/.bashrc`. This is one of those dotfiles—it's run automatically for bash to see your preferences–backslashed characters are your friends! They’re how you can put variables into your prompt. Check out this list for some: https://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
+1. Asigna la fórmula que quieras a la variable `PS1` en bash.
+2. Haz todo tu trabajo en `~/.bashrc`. Este archivo es uno de los 'dotfiles' antes mencionados y se ejecuta automáticamente para que bash pueda ver tus preferencias. Escribir una barra invertida antes de un carácter te permite poner variables en tu indicador. Consulta esta lista para conocer algunas combinaciones: https://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html
 
-This links are useful for getting started with Bash:
+Estos enlaces son útiles para empezar a trabajar con Bash:
 
 - http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
 - http://cs.lmu.edu/~ray/notes/bash/
-- https://programminghistorian.org/en/lessons/intro-to-bash (spanish: https://programminghistorian.org/es/lecciones/introduccion-a-bash)
+- https://programminghistorian.org/es/lecciones/introduccion-a-bash
 - https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal
- https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html (essential, valuable, and useful lists are good—the rest are a tad out of date)
-- https://softcover.s3.amazonaws.com/636/learn_enough_command_line/images/figures/anatomy.png (an image explaining bash's structure)
-- http://tldp.org/LDP/abs/html/ (way too in depth, and focused on scripting, not command line. Could be useful as a 'dictionary')
-- https://www.youtube.com/watch?v=oxuRxtrO2Ag&t=3922s (highly recommend 1.5-2x speed)
+- https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html (las listas "essential", "valuable" y "useful" son buenas-las otras son algo anticuadas)
+- https://softcover.s3.amazonaws.com/636/learn_enough_command_line/images/figures/anatomy.png (una imagen que explica la estructura de bash)
+- http://tldp.org/LDP/abs/html/ (demasiado detallado, enfocado en programas en vez de la línea de comandos. Podría ser útil como un diccionario)
+- https://www.youtube.com/watch?v=oxuRxtrO2Ag&t=3922s
 
 

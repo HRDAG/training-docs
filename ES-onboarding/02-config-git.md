@@ -2,7 +2,7 @@
 
 Git es una forma de registrar cambios dentro de un repositorio para que puedas volver a versiones anteriores de archivos y juntar tu trabajo con el de otros. No es completamente ideal para nuestro tipo de trabajo con datos, pero es la norma de la indústria así que lo usamos. (Lo complementamos con nuestro propio sistema de control de versiones llamado `snap`, pero ésa es otra lección.
 
-GitHub es un sitio web que ofrece un interfaz bonito para git y facilita la colaboración con organizaciones. Lo usamos para la mayor parte de nuestros proyectos en HRDAG.
+GitHub es un sitio web que ofrece una interfaz bonita para git y facilita la colaboración con organizaciones. Lo usamos para la mayor parte de nuestros proyectos en HRDAG.
 
 ## Pasos de configuración
 
