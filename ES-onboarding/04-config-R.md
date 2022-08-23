@@ -21,7 +21,7 @@ Recuerda que hay que instalar R antes de instalar RStudio. R se puede instalar
 
 # RStudio a través de un navegador
 
-[Este](https://support.rstudio.com/hc/en-us/articles/234653607-Getting-Started-with-RStudio-Server) es un buen texto sobre el uso de RStudio Server, lo cual te permite trabajar en RStudio a través de un navegador. 
+[Este](https://support.rstudio.com/hc/en-us/articles/234653607-Getting-Started-with-RStudio-Server) es un buen texto sobre el uso de RStudio Server, el cual te permite trabajar en RStudio a través de un navegador. 
 
 # Lee el libro 
 [_R para Ciencia de Datos_ en español](https://es.r4ds.hadley.nz/)
