@@ -10,14 +10,14 @@ The reason it's good to try to solve the problem on your own (besides the fact t
 
 Here are some tips on bug-fixing:
 * Copy and paste the relevant part of the error message into Google
-* Search the issues in [this repository](https://github.com/HRDAG/HRDAG-training/issues?q=is%3Aissue). As of June 2020, there aren't that many, so you might even glance through all the titles and see if there's anything relevant.
+* Search the issues in [this repository](https://github.com/HRDAG/training-docs/issues). As of August 2022, there aren't that many, so you might even glance through all the titles and see if there's anything relevant.
 * If it's in a script, try commenting out the offending line and see if you get a different, interesting error
 
 The amount of time you spend trying to solve your problem before you ask for help should gradually get longer. In the beginning, don't spend more than 5 minutes, but that will naturally become 15, 30, or 120 minutes.
 
 ## Asking for help
 
-When you do ask for help, the best place is to [make a new issue](https://github.com/HRDAG/HRDAG-training/issues/new) in this repository. That way, future HRDAG people can benefit from your knowledge.
+When you do ask for help, the best place is to [make a new issue](https://github.com/HRDAG/training-docs/issues/new) in this repository. That way, future HRDAG people can benefit from your knowledge.
 
 Here are some guidelines for asking good questions:
 * explain why you are trying to do what you're doing. There might be a tool that fits the problem better.
