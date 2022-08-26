@@ -25,7 +25,7 @@ Although this crisis is faced by many fields, working in human rights gives an e
 
 # Some readings
 
-You can click [here](http://ropensci.github.io/reproducibility-guide/sections/references/) for some readings on reproducible results. 
+You can click [here](https://github.com/ropensci-archive/reproducibility-guide/blob/gh-pages/sections/references/index.md) for some readings on reproducible results. 
 
 
 
