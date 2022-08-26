@@ -8,7 +8,7 @@ En HRDAG organizamos nuestro trabajo en tareas o "tasks" (ve `06-tareas.md`). Si
 ## Markdown
 Markdown es un lenguaje de programación pensado para la redacción (este documento está escrito en Markdown). Los archivos de Markdown terminan con `.md`.
 
-- La página [Basic writing and formatting syntax](https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax) tiene toda la información que se necesita para aprender a escribir y formatear el texto en Markdown.
+- La página [Sintaxis de escritura y formato básicos](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) tiene toda la información que se necesita para aprender a escribir y formatear el texto en Markdown.
 
 
 ## `R` & R Markdown

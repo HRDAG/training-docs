@@ -9,6 +9,6 @@ GitHub es un sitio web que ofrece una interfaz bonita para git y facilita la col
 Muy probablemente ya tienes git instalado en tu computador y solo tendrás que configurar GitHub.
 
 1. Abre una cuenta de GitHub (https://github.com/join).
-2. Conecta tu cuenta de GitHub con una clave SSH (https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh). Tu clave SSH permite que GitHub reconozca quién eres cuando le pides archivos. Es como una contraseña más segura que no tienes que recordar.
+2. Conecta tu cuenta de GitHub con una clave SSH (https://docs.github.com/es/authentication/connecting-to-github-with-ssh). Tu clave SSH permite que GitHub reconozca quién eres cuando le pides archivos. Es como una contraseña más segura que no tienes que recordar.
 
 ¡Eso es todo!
