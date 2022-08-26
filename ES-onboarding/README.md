@@ -1,29 +1,33 @@
-# HRDAG Training
+# Materiales didácticos de HRDAG
 
-This repo contains training materials for HRDAG colleagues. As you read, you'll likely encounter questions, and as you try things in practice, you'll run into incomprehensible errors.
+Este repositorio contiene materiales didácticos para los y las colegas de HRDAG. A medida que los vas leyendo, es probable que surjan preguntas y cuando intentes poner estos conceptos en práctica, puede que te topes con errores incomprensibles.
 
-If this happens to you, after a few minutes of trying to fix it, you should ask for help! One of your colleagues may have seen the error you're trying to deal with, or be familiar with related problems.
+Si esto ocurre, deberías pedir ayuda después de unos minutos de intentar resolver el error. Es probable que uno/a de tus colegas haya visto el error antes o esté familiarizado/a con problemas parecidos.
 
-## Before you ask for help
+## Antes de pedir ayuda
 
-The reason it's good to try to solve the problem on your own (besides the fact that you might actually fix it) is that it will help you clarify your question. A few minutes poking around might reveal that what you thought was an issue with your ssh config is actually a problem with your bashrc. You may still not know *what* the problem is, but it'll be easier for someone to help.
+La razón por la que es una buena práctica intentar resolver un problema por tu cuenta (aparte del hecho de que tal vez soluciones el problema) es que te ayudará a aclarar tu pregunta. Pasar unos minutos haciendo pruebas podría revelar que lo que pensabas que era un problema con tus configuraciones de ssh en realidad era un problema con tu archivo .bashrc. Puede ser que todavía no sepas *cuál* es el problema, pero por lo menos será más fácil que alguien más te ayude.
 
-Here are some tips on bug-fixing:
-* Copy and paste the relevant part of the error message into Google
-* Search the issues in [this repository](https://github.com/HRDAG/HRDAG-training/issues?q=is%3Aissue). As of June 2020, there aren't that many, so you might even glance through all the titles and see if there's anything relevant.
-* If it's in a script, try commenting out the offending line and see if you get a different, interesting error
+Unos consejos para corregir errores:
+<!-- it looks like the repository linked in the second bullet point no longer exists. alternative repo?-->
 
-The amount of time you spend trying to solve your problem before you ask for help should gradually get longer. In the beginning, don't spend more than 5 minutes, but that will naturally become 15, 30, or 120 minutes.
+* Copia y pega la parte relevante del mensaje de error en Google
+* Busca el problema en la página de "issues" de [este repositorio](https://github.com/HRDAG/training-docs/issues). Puede que ya haya un "issue" sobre el mismo problema.
+* Si el error ocurre dentro de un script, intenta comentar la línea errónea para ver si aparece otro error interesante.
 
-## Asking for help
+El tiempo que dedicas a intentar resolver tu problema antes de pedir ayuda debería aumentar a la medida que vas familiarizándote con estas herramientas. Al principio, no debes dedicar más de 5 minutos, pero después de un tiempo naturalmente dedicarás 15, 30 o 120 minutos. 
 
-When you do ask for help, the best place is to [make a new issue](https://github.com/HRDAG/HRDAG-training/issues/new) in this repository. That way, future HRDAG people can benefit from your knowledge.
+## Cómo pedir ayuda
 
-Here are some guidelines for asking good questions:
-* explain why you are trying to do what you're doing. There might be a tool that fits the problem better.
-* if you're trying to fix an error, copy and paste the entire error message into the question. Use markdown's block-code feature (enclose the error message in `` ``` ``s) to retain formatting.
-* describe the steps you've already taken, and what the results were.
+Cuando pidas ayuda, es recomendable [crear un nuevo "issue"](https://github.com/HRDAG/training-docs/issues/new) en este repositorio. De esta forma, los/as futuros/as colegas de HRDAG se beneficiarán de tus conocimientos.
+<!-- fix link. -->
 
-Have fun, and ask away!
+Unos consejos para formular buenas preguntas:
+
+* explica por qué estás intentando hacer lo que quieres hacer. Puede que haya una herramienta más apta para solucionar el problema.
+* si estás intentando resolver un error, copia y pega el mensaje de error completo en la pregunta. Usa la función de bloques de código en Markdown (pon el mensaje de error entre `` ``` ``s) para mantener el formato del código.
+* describe las soluciones que ya has probado y cuáles fueron los resultados.
+
+¡Diviértete y no dudes en hacernos preguntas!
 
 <!-- done. -->

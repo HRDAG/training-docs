@@ -1,0 +1,32 @@
+---
+title: "Algunas reflexiones sobre la reproducibilidad"
+output: pdf_document
+header-includes:
+- \usepackage{float}
+- \usepackage{hyperref}
+- \hypersetup{
+     colorlinks=true,
+     linkcolor=black,
+     citecolor = black,
+     urlcolor=blue,
+     }
+fontsize: 12pt
+---
+
+# ¿Por qué es importante poder auditar los proyectos?
+
+Poder replicar los resultados de nuestros análisis de datos es clave para nuestra reputación. Por lo general, poder replicar algo significa que podemos obtener el mismo resultado una y otra vez utilizando el mismo script y los mismos datos de entrada. En las ciencias, también se habla de la *reproducibilidad*, que implica más variación experimental. La reproducibilidad y replicabilidad son parte de las mejores prácticas científicas, y es en parte por esto que recomendamos usar la línea de comandos en vez de los ambientes de desarrollo interactivos (como R Studio).
+
+Con resultados replicables, podemos compartir nuestros métodos con otros/as científicos/as, lo cual produce dos externalidades positivas. Primero, nuestros resultados podrán ser validados por otros/as investigadores/as, lo cual da credibilidad a nuestros hallazgos. Segundo, al poder compartir nuestros métodos con otros/as investigadores/as, se producen economías de escala y se minimiza el esfuerzo necesario para reproducir estas técnicas.
+
+
+El mundo se enfrenta a una crisis de reproducibilidad. La revista *Nature* realizó [una encuesta](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970) sobre este tema y encontró que "más de 70% de los investigadores han intentado reproducir los resultados de otro/a científico/a sin lograrlo, y más de la mitad no han podido reproducir sus propios experimentos".
+
+Aunque esta crisis está presente en muchas disciplinas, en el área de los derechos humanos, la replicabilidad es particularmente crucial. Aunque nuestros métodos y resultados son imparciales y no manipulamos ninguna parte del proceso de esclarecer la verdad, es muy probable que nuestros hallazgos no les gustarán a ciertos actores. Por esto, cuando publicamos nuestros resultados para su uso por los/as defensores/as de derechos humanos, hay que asegurarnos de que los resultados no tengan errores. Garantizar la replicabilidad es clave para esto.
+
+# Algunas lecturas
+
+Puedes hacer clic [aquí](https://github.com/ropensci-archive/reproducibility-guide/blob/gh-pages/sections/references/index.md) para ver algunas lecturas sobre la reproducibilidad.
+
+<!-- done -->
+

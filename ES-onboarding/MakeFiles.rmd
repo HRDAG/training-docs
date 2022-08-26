@@ -13,44 +13,45 @@ header-includes:
 fontsize: 12pt
 ---
 
-# What is a MakeFile? 
+# ¿Qué es un Makefile?
 
-A MakeFile is a file to compile code. We have one of them for each of the tasks that we create in our data analysis. We locate it inside of a task but outside of any of the directories (input, output, src, hand, frozen).
+Un Makefile es un archivo para compilar código. Tenemos Makefiles para cada tarea que creamos en nuestro análisis de datos. Se guardan dentro de una tarea pero fuera de los subdirectorios (input, output, src, hand, frozen).
 
-# What should it look like?
+# ¿Cómo debe ser un Makefile?
 
-1. It must always contain a header as any other text file we are creating containing:
+1. Como cualquier archivo de texto que creamos, siempre debe incluir una cabecera que incluye:
 
-Author: 
-Maintainers:
-Date: Oct. 16 2019
-License: 
+Author (autor/a): 
+Maintainers (mantenedores):
+Date (fecha): Oct. 16 2019
+License (licencia): 
  ------
-path
+ruta/del/archivo
 
-2. Then you must follow this structure:
+2. Después, hay que seguir esta estructura:
 
-2.1 For R
-
+2.1 Para ejecutar scripts escritos en R:
+```
 .PHONY: all clean
  
-all:  path(s) to the output
+all:  ruta(s) de los archivos de salida
  
 clean:
 	rm output/*
  
-path to the output1: \
-		script for creating that output 
+ruta del primer archivo de salida: \
+		script para crear ese archivo 
 	Rscript --vanilla $<
  
-path to the output1: \
-		script for creating that output 
-	Rscript --vanilla $< 
+ruta del segundo archivo de salida: \
+		script para crear ese archivo 
+	Rscript --vanilla $<
+```
 
-3. Example 
+3. Ejemplo
 
-We want to create a MakeFile for our task "append" in our data analysis about social movement leaders killings in Colombia. The output will be a database with all of the different years we have. We will also create a logfile with basic information that we will use later in our report.
-
+Digamos que queremos crear un Makefile para la tarea "append" (añadir) en un análisis de datos sobre los asesinatos de líderes sociales en Colombia. El archivo de salida será una base de datos con todos los años que tenemos en nuestros registros. También crearemos un archivo .log con información básica que usaremos después para nuestro informe.
+```
 Author: VRA
 Maintainers: VRA, PB, CAF
 Date: Oct. 16 2019
@@ -77,7 +78,7 @@ output/logfileappend.log: \
 	Rscript --vanilla $<
 
 done
-
+```
 
 <!-- done -->
 
