@@ -4,7 +4,7 @@ This repo contains materials to study and learn about principled data processing
 - `demo-tasks` to walk-through how to use some of those tools in practice
 - `templates` to serve as outlines for routine files like Makefiles and scripts in python or R
 - `checklists` to refer to as you work and contribute to projects (updating a repo, writing a script, adding a new task)
-- `language-tips` to consider when writing scripts (like scalability, missingness)
+- `languages` and language-specific tips to consider when writing scripts (like scalability, missingness)
 - `notebooks` to walk-through various topics in context of a specific language (ie. set operations in python)
 
 ## helpful repos
