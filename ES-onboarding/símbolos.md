@@ -17,3 +17,5 @@
 |    ()   |   paréntesis              |   parentheses |
 |    []   |   paréntesis cuadrados    |   hard brackets |
 |    {}   |   paréntesis rizados      |   curly brackets |
+|   \|    |   ?                       |   pipe  |
+|    <>   |   ?                       |   carrots, pointy brackets  |
