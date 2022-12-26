@@ -1,5 +1,5 @@
 | símbolo |   Spanish                 |   English |
-|   ---   |   ---                     |   --- |
+|   :-:   |   :-:                     |   :-: |
 |    .    |   período, punto          |   period, point |
 |    ,    |   coma                    |   comma |
 |    ;    |   punto y coma            |   semicolon |
