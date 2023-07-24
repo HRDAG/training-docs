@@ -1,10 +1,11 @@
 ### Task directories
 
 #### Minimum requirements
-- [] `input` directory created
 - [] `src` directory created
-- [] `output` directory created
 - [] Makefile created
+- If tracking input, `input` directory should be created (else: not necessary)
+- Ideally, the first target in a makefile makes the `output` directory at runtime \
+(usually "-mkdir output")
 
 #### Supplemental requirements
 _If documents are provided alongside partner data,_
