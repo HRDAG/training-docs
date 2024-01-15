@@ -45,9 +45,10 @@ on git:
 on workflow:
 - [Filenames and data science project organization, Integrated development environments](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/03-filenames-project-organization.html)
 - [Introduction to testing code for data science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html)
-- [Non-interactive scripts and data analysis pipelines](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/07-scripts-and-pipelines.html)
+- [Non-interactive scripts](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/07-scripts.html)
+- [data analysis pipelines](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/09-pipelines.html)
 - [Reproducible reports](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/08-reproducible-reports.html)
-- [Automated testing and continuous integration](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/10-continuous-integration.html)
+- [Automated testing and continuous integration](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/11-continuous-integration.html)
 
 ## other suggested reading
 - [Using Statistics to Assess Lethal Violence in Civil and Inter-State War](https://www.annualreviews.org/doi/pdf/10.1146/annurev-statistics-030718-105222#article-denial) (ask Megan for the PDF if you can't download this one for free!)
