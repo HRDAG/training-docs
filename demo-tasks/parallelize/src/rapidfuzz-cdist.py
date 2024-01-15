@@ -12,7 +12,7 @@ from sys import stdout
 import argparse
 import logging
 import pandas as pd
-import Levenshtein
+import rapidfuzz
 import line_profiler
 
 profile = line_profiler.LineProfiler()
@@ -21,10 +21,10 @@ profile = line_profiler.LineProfiler()
 # support methods --- {{{
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--pairs", default="output/linepairs.parquet")
-    parser.add_argument("--output", default="output/L-py-singl.parquet")
+    parser.add_argument("--lines", default="output/lines.parquet")
+    parser.add_argument("--output", default="output/rf-py-cdist.parquet")
     args = parser.parse_args()
-    assert Path(args.pairs).exists()
+    assert Path(args.lines).exists()
     return args
 
 
@@ -44,8 +44,10 @@ def get_logger(sname, file_name=None):
 
 
 @profile
-def getdist(a, b):
-    return Levenshtein.distance(a, b)
+def procdist(lines):
+    return rapidfuzz.process.cdist(lines, lines,
+                                   scorer=rapidfuzz.distance.Levenshtein.distance,
+                                   workers=-1).flatten()
 # }}}
 
 # main --- {{{
@@ -58,6 +60,11 @@ if __name__ == '__main__':
     args = get_args()
 
     pairs = pd.read_parquet(args.pairs)
-    pairs['Levanshtein'] = pairs.apply(lambda row: getdist(row.line_a, row.line_b), axis=1)
+    lines = pairs.line_a.unique()
+    # the cdist method wants to do the pairing between colla and collb
+    # but we want to do the pairing and possible filtering ourselves
+    # using unique lines preserves this example but isnt ideal if set(colla) != set(collb)
+    pairs['rapidfuzz_levdist'] = procdist(lines)
+    assert (pairs.loc[pairs.line_a == pairs.line_b, 'rapidfuzz_levdist'] == 0).all()
     pairs.to_parquet(args.output)
 # }}}
