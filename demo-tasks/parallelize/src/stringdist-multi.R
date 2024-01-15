@@ -15,6 +15,7 @@ pacman::p_load(argparse, arrow, assertr, logger, stringdist, tidyverse)
 get_args <- function() {
   parser <- ArgumentParser()
   parser$add_argument("--pairs", default="/Users/home/git/training-docs/demo-tasks/parallelize/output/linepairs.parquet")
+  parser$add_argument("--nthreads", default=4)
   parser$add_argument("--output", default="/Users/home/git/training-docs/demo-tasks/parallelize/output/L-R-singl.parquet")
   args <- parser$parse_args()
   args
@@ -32,6 +33,7 @@ set_log(logname)
 # arg handling
 args <- get_args() 
 pairs <- read_parquet(args$pairs)
-pairs$stringdist <- stringdist(pairs$line_a, pairs$line_b, method='lv')
+OMP_NUM_THREADS <- args$nthreads
+pairs$stringdist <- stringdist(pairs$line_a, pairs$line_b, method='lv', nthread=OMP_NUM_THREADS)
 write_parquet(pairs, args$output)
 # }}}
